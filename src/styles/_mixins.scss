@@ -1,0 +1,17 @@
+@mixin links ($link, $visited, $hover, $active, $none) {
+    & {
+        color: $link;
+        &:visited {
+            color: $visited;
+            text-decoration: $none;
+        }
+        &:hover {
+            color: $hover;
+            text-decoration: $none;
+        }
+        &:active, &:focus {
+            color: $active;
+            text-decoration: $none;
+        }
+    }
+}
