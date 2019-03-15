@@ -21,14 +21,13 @@ class SearchRecipes extends Component {
     let { ingredients, dish } = this.state;
   
     const url =  await fetch (`http://www.recipepuppy.com/api/?i=${ingredients}&q=${dish}`);
-
-    const response = await url.json()
+    const resData = await url.json()
       .then(data => { 
           this.props.setRecipes(data.results)
         })
       .catch(error => console.log(error));
 
-      return response;
+      return resData;
   }
 
   render() {
