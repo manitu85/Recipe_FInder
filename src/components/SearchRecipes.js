@@ -22,6 +22,7 @@ class SearchRecipes extends Component {
   
     const url =  await fetch (`http://www.recipepuppy.com/api/?i=${ingredients}&q=${dish}`);
     const resData = await url.json()
+    // Resolve promise
       .then(data => { 
           this.props.setRecipes(data.results)
         })
