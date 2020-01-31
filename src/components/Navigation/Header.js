@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import { FaUtensils } from 'react-icons/fa';
+import { Container, Navbar, Nav, NavbarBrand } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
+import { FaUtensils } from 'react-icons/fa'
 
 
 const Header = () => {
@@ -30,4 +30,4 @@ const Header = () => {
 }
 
 
-export default Header;
+export default Header

@@ -3,11 +3,11 @@ import { render } from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import rootReducer from './reducers'
 // Components
-import App from './components/App'
-import FavoriteRecipeList from './components/FavoriteRecipeList'
-import Error404 from './components/Error404'
+import rootReducer from './store/reducers/rootReducers'
+import App from './container/App'
+import FavoriteRecipeList from './components/Recipe/FavoriteRecipeList'
+import Error404 from './components/Error/Error404'
 // Styles
 import './styles/app.scss'
 // ##############################################################
@@ -18,9 +18,9 @@ const store = createStore(rootReducer)
 // Check store state
 store.subscribe(() => console.log('store:', store.getState()))
 
-// ReactDOM.render
-render(
-  <Provider store={store}>
+// App routes
+const routes = (
+   <Provider store={store}>
     <BrowserRouter>
       <Switch>
         <Route exact path='/' component={App} />
@@ -28,7 +28,10 @@ render(
         <Route component={Error404} />
       </Switch>
     </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 )
+
+// ReactDOM.render
+const root = document.getElementById("root")
+render(routes, root)
 

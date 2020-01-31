@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import ListGroup from 'react-bootstrap/ListGroup';
-import Container from 'react-bootstrap/Container';
-import { favoriteRecipes } from '../actions/favoriteRecipes'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Container from 'react-bootstrap/Container'
+import { favoriteRecipes } from '../../store/actions/favoriteRecipes'
 
 class RecipeItem extends Component {
   state = {
@@ -19,16 +19,16 @@ class RecipeItem extends Component {
       thumbnail: PropTypes.string,
     }),
     favorite: PropTypes.func
-  };
+  }
 
   // Methods
   favorite(recipe) {
-    this.props.favoriteRecipes(recipe);
-    this.setState({favorited: true});
+    this.props.favoriteRecipes(recipe)
+    this.setState({favorited: true})
   }
   
   render() {
-    const { title, href, ingredients, thumbnail } = this.props.recipe;
+    const { title, href, ingredients, thumbnail } = this.props.recipe
     return (
       <Container className='d-flex justify-content-center'>
         <ListGroup className='w-50 mt-2'>
@@ -37,8 +37,8 @@ class RecipeItem extends Component {
               {
                 this.props.favoriteBtn === true
                   ? this.state.favorited
-                    ? <div className='star'>&#9733;</div>
-                    : <div className='star' onClick={() => this.favorite(this.props.recipe)}>&#9734;</div>
+                    ? <div className='star'>&#9733</div>
+                    : <div className='star' onClick={() => this.favorite(this.props.recipe)}>&#9734</div>
                   : <div></div>
               }
               <div className='recipe-text'>
@@ -62,5 +62,5 @@ class RecipeItem extends Component {
 }
 
 
-export default connect(null, { favoriteRecipes })(RecipeItem);
+export default connect(null, { favoriteRecipes })(RecipeItem)
  

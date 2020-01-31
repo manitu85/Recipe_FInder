@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Container, Button } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card';
-import QuotesGenerator from './QuoteGenerator';
-import { setRecipes } from '../actions/setRecipes';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Container, Button } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card'
+import QuotesGenerator from '../QuoteGenerator/QuoteGenerator'
+import { setRecipes } from '../../store/actions/setRecipes'
 
 class SearchRecipes extends Component {
   constructor(props) {
@@ -15,23 +15,23 @@ class SearchRecipes extends Component {
        dish: ''
     }
   }
-
-  // const [ingredients, setIngredients] = useState('');
-  // const [dish, setDish] = useState('');
+  
+  // const [ingredients, setIngredients] = useState('')
+  // const [dish, setDish] = useState('')
   
   // Method GET
   async search() {
-    let { ingredients, dish } = this.state;
+    let { ingredients, dish } = this.state
   
-    const url =  await fetch (`http://www.recipepuppy.com/api/?i=${ingredients}&q=${dish}`);
+    const url =  await fetch (`http://www.recipepuppy.com/api/?i=${ingredients}&q=${dish}`)
     const resData = await url.json()
     // Resolve promise
       .then(data => { 
           this.props.setRecipes(data.results)
         })
-      .catch(error => console.log(error));
+      .catch(error => console.log(error))
 
-      return resData;
+      return resData
   }
 
   render() {
@@ -73,7 +73,7 @@ class SearchRecipes extends Component {
 }
 
 
-export default connect(null, { setRecipes })(SearchRecipes);
+export default connect(null, { setRecipes })(SearchRecipes)
 
 
 

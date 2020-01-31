@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import RecipeItem from './RecipeItem';
-import Header from './Header';
+import React from 'react'
+import { connect } from 'react-redux'
+import RecipeItem from './RecipeItem'
+import Header from '../Navigation/Header'
 
 
 const FavoriteRecipeList = ({ favoriteRecipes }) => {
@@ -31,4 +31,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps, null)(FavoriteRecipeList);
+export default connect(mapStateToProps, null)(FavoriteRecipeList)
