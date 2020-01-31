@@ -15,6 +15,9 @@ class SearchRecipes extends Component {
        dish: ''
     }
   }
+
+  // const [ingredients, setIngredients] = useState('');
+  // const [dish, setDish] = useState('');
   
   // Method GET
   async search() {

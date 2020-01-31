@@ -6,8 +6,9 @@ const NewQuoteButton = (props) => {
     <div>
       <Button 
         onClick={props.handleNewQuoteBtn}
-        className='btn btn-warning btn-sm'>
-        New quote
+        className='btn btn-warning btn-sm'
+      >
+      New quote
       </Button>
     </div>
   )
