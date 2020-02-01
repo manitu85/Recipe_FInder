@@ -18,8 +18,9 @@ class SearchRecipes extends Component {
   
   // const [ingredients, setIngredients] = useState('')
   // const [dish, setDish] = useState('')
-  
-  // Method GET
+
+  componentDidMount() {
+    // Method GET
   async search() {
     let { ingredients, dish } = this.state
   
@@ -32,7 +33,23 @@ class SearchRecipes extends Component {
       .catch(error => console.log(error))
 
       return resData
+    }
   }
+  
+  // Method GET
+  // async search() {
+  //   let { ingredients, dish } = this.state
+  
+  //   const url =  await fetch (`http://www.recipepuppy.com/api/?i=${ingredients}&q=${dish}`)
+  //   const resData = await url.json()
+  //   // Resolve promise
+  //     .then(data => { 
+  //         this.props.setRecipes(data.results)
+  //       })
+  //     .catch(error => console.log(error))
+
+  //     return resData
+  // }
 
   render() {
     return (

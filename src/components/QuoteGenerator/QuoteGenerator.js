@@ -14,6 +14,7 @@ const QuotesGenerator = () => {
    setTimeout(() => {
      newQuote()
    }, 500)
+  // eslint=-disable-next-line
   }, [])
   
   const newQuote = () => {
@@ -22,6 +23,8 @@ const QuotesGenerator = () => {
     // import data from quotes
     let content = quotes[number].content
     let author = quotes[number].author
+
+    console.log(author)
 
     setContent(content)
     setAuthor(author) 
